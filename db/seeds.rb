@@ -1,0 +1,6 @@
+User.create(first_name: "Kay", last_name: "Mok", email: "kay@example.com", password: "password", birthday: Time.at(rand * Time.now.to_i), username: "mokaymokay")
+Post.create(quote: "there is nothing to explain: just be, and live.", author: "manzoni", user_id: 1)
+Tag.create(content: "life")
+Tag.create(content: "philosophy")
+Tagging.create(post_id: 1, tag_id: 1)
+Tagging.create(post_id: 1, tag_id: 2)
