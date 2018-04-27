@@ -13,8 +13,8 @@ configure do
 end
 
 get '/' do
-  if current_user
-    erb :'users/index', layout: :'users/layout'
+  if user_exists? && current_user
+    erb :'users/index', :layout => :'users/layout'
   else
     erb :index
   end
@@ -30,7 +30,7 @@ post '/login' do
     set_as_current_user
     redirect '/'
   else
-    # TODO: display error message instead of redirecting?
+    # TODO: display error message instead of redirecting/refreshing form
     redirect '/login'
   end
 end
@@ -42,6 +42,11 @@ end
 post '/signup' do
   @user = User.create(first_name: params[:first_name], last_name: params[:last_name], email: params[:email], password: params[:password], birthday: params[:birthday], username: params[:username])
   set_as_current_user
+  redirect '/'
+end
+
+get '/logout' do
+  session.clear
   redirect '/'
 end
 
