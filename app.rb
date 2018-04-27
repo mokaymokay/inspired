@@ -14,6 +14,7 @@ end
 
 get '/' do
   if user_exists? && current_user
+    @user = current_user
     erb :'users/index', :layout => :'users/layout'
   else
     erb :index
