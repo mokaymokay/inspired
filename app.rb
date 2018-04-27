@@ -15,6 +15,7 @@ end
 get '/' do
   if user_exists? && current_user
     @user = current_user
+    @posts = Post.where.not(user_id: @user.id)
     erb :'users/index', :layout => :'users/layout'
   else
     erb :index

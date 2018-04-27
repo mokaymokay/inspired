@@ -1,1 +1,16 @@
-<h1>welcome back!</h1>
+<% @posts.each do |post| %>
+  <div class="card my-5">
+    <div class="card-body">
+      <!-- # TODO: refactor display without using another query -->
+      <div class="mb-3"><small><%= User.find(post.user_id).username %></small></div>
+      <blockquote class="blockquote mb-0">
+        <p><%= post.quote %></p>
+        <footer class="blockquote-footer"><%= post.author %></footer>
+      </blockquote>
+      <br>
+      <% post.tags.each do |tag| %>
+        <small>#<%= tag.content %></small>
+      <% end %>
+    </div>
+  </div>
+<% end %>
