@@ -1,0 +1,54 @@
+<form class="needs-validation" novalidate>
+  <div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label for="validationFirstName">First name</label>
+      <input name="first_name" type="text" class="form-control" id="validationFirstName" placeholder="First name" required>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="validationLastName">Last name</label>
+      <input name="last_name" type="text" class="form-control" id="validationLastName" placeholder="Last name" required>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="validationCustomUsername">Username</label>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroupPrepend">@</span>
+        </div>
+        <input name="username" type="text" class="form-control" id="validationCustomUsername" placeholder="Username" aria-describedby="inputGroupPrepend" required>
+        <div class="invalid-feedback">
+          Please choose a username.
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="col-md-6 mb-3">
+      <label for="validationEmail">Email</label>
+      <input name="email" type="email" class="form-control" id="validationEmail" placeholder="Email" required>
+      <div class="invalid-feedback">
+        Please provide a valid email.
+      </div>
+    </div>
+    <div class="col-md-3 mb-3">
+      <label for="validationPassword">Password</label>
+      <input type="password" class="form-control" id="validationPassword" placeholder="Password" required pattern=".{6,20}">
+      <div class="invalid-feedback">
+        Must be 6-20 characters long.
+      </div>
+    </div>
+    <div class="col-md-3 mb-3">
+      <label for="validationBirthday">Birthday</label>
+      <input name="birthday" type="date" class="form-control" id="validationBirthday" placeholder="Birthday" required>
+      <div class="invalid-feedback">
+        Please proide a valid birthday.
+      </div>
+    </div>
+  </div>
+  <button class="btn btn-primary" type="submit">Sign up</button>
+</form>
