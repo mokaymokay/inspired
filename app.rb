@@ -73,22 +73,18 @@ post '/posts/new' do
     end
     Tagging.create(post_id: post.id, tag_id: tag_id)
   end
-  # TODO: should redirect to user's blog sorted by most recent post
-  redirect '/users/#{@user.id}'
+  # after posting, redirect to own blog :)
+  redirect "/users/#{@user.id}"
 end
 
 get '/users/:id' do
-  if params[:id].to_i <= User.count
+  if User.exists?(params[:id])
     blog_owner = User.find(params[:id])
     # display posts that belong to blog owner
     @posts = Post.where(user_id: blog_owner.id)
-    if session_exists? && blog_owner == current_user
-      puts "haha"
-    else
-      puts "fail"
-    end
-    if session_exists?
-      # define @user instance variable for user layout
+    # if user is logged in, display user layout
+    if session_exists? && current_user
+      # need @user instance variable for user layout
       @user = current_user
       erb :'users/index', :layout => :'users/layout'
     else
