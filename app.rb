@@ -15,6 +15,7 @@ end
 get '/' do
   if user_exists? && current_user
     @user = current_user
+    # displays posts that do not belong to the logged in user in homepage
     @posts = Post.where.not(user_id: @user.id)
     erb :'users/index', :layout => :'users/layout'
   else
@@ -55,6 +56,23 @@ end
 get '/posts/new' do
   @user = current_user
   erb :'posts/new', :layout => :'users/layout'
+end
+
+post '/posts/new' do
+  @user = current_user
+  post = Post.create(quote: params[:quote], author: params[:author], user_id: @user.id)
+  tags = params[:tags]
+  tags.split(' ').each do |tag|
+    tag_in_db = Tag.find_by(content: tag)
+    if tag_in_db.nil?
+      new_tag = Tag.create(content: tag)
+      Tagging.create(post_id: post.id, tag_id: new_tag.id)
+    else
+      Tagging.create(post_id: post.id, tag_id: tag_in_db.id)
+    end
+  end
+  # TODO: should redirect to user's blog sorted by most recent post
+  redirect '/'
 end
 
 
