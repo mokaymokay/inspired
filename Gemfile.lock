@@ -14,6 +14,8 @@ GEM
       tzinfo (~> 1.1)
     arel (9.0.0)
     concurrent-ruby (1.0.5)
+    faker (1.8.7)
+      i18n (>= 0.7)
     i18n (1.0.1)
       concurrent-ruby (~> 1.0)
     minitest (5.11.3)
@@ -42,11 +44,12 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  pg!
-  rake!
-  shotgun!
-  sinatra!
-  sinatra-activerecord!
+  faker
+  pg
+  rake
+  shotgun
+  sinatra
+  sinatra-activerecord
 
 BUNDLED WITH
    1.16.1

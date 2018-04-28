@@ -52,6 +52,12 @@ get '/logout' do
   redirect '/'
 end
 
+get '/posts/new' do
+  @user = current_user
+  erb :'posts/new', :layout => :'users/layout'
+end
+
+
 
 private
 
