@@ -15,5 +15,10 @@
     </div>
   <% end %>
 <% else %>
-  <p><%= @blog_owner.username %> hasn't made a post.</p>
+  <% if @user == @blog_owner %>
+    <p>you haven't published anything yet.</p>
+    <p>click <a href="/posts/new">post</a> in the navigation bar to start sharing and inspire others!</p>
+  <% else %>
+    <p><%= @blog_owner.username %> hasn't shared anything yet.</p>
+  <% end %>
 <% end %>

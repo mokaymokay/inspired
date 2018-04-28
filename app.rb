@@ -79,9 +79,9 @@ end
 
 get '/users/:id' do
   if User.exists?(params[:id])
-    blog_owner = User.find(params[:id])
+    @blog_owner = User.find(params[:id])
     # display posts that belong to blog owner
-    @posts = Post.where(user_id: blog_owner.id)
+    @posts = Post.where(user_id: @blog_owner.id)
     # if user is logged in, display user layout
     if session_exists? && current_user
       # need @user instance variable for user layout
