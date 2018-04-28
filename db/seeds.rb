@@ -21,6 +21,10 @@ end
 Tag.create(content: "life")
 Tag.create(content: "philosophy")
 Tag.create(content: "time")
+Tag.create(content: "love")
+Tag.create(content: "loss")
+Tag.create(content: "change")
+Tag.create(content: "courage")
 
 Tagging.create(post_id: 1, tag_id: 1)
 Tagging.create(post_id: 1, tag_id: 2)
@@ -28,5 +32,9 @@ Tagging.create(post_id: 2, tag_id: 1)
 Tagging.create(post_id: 2, tag_id: 3)
 
 150.times do
-    Tagging.create(post_id: 1 + rand(number_of_users * 20), tag_id: 1 + rand(3))
+  random_post_id = 1 + rand(number_of_users * 20)
+  random_tag_id = 1 + rand(7)
+  if Tagging.find_by(post_id: random_post_id, tag_id: random_tag_id) == nil
+    Tagging.create(post_id: random_post_id, tag_id: random_tag_id)
+  end
 end
