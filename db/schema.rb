@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_04_28_180541) do
+ActiveRecord::Schema.define(version: 2018_04_28_220717) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 2018_04_28_180541) do
     t.string "username"
   end
 
-  add_foreign_key "posts", "users"
-  add_foreign_key "taggings", "posts"
-  add_foreign_key "taggings", "tags"
+  add_foreign_key "posts", "users", on_delete: :cascade
+  add_foreign_key "taggings", "posts", on_delete: :cascade
+  add_foreign_key "taggings", "tags", on_delete: :cascade
 end

@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'sinatra/activerecord'
+require 'pry'
 require_relative './models/user'
 require_relative './models/post'
 require_relative './models/tag'
@@ -13,7 +14,7 @@ configure do
 end
 
 get '/' do
-  if user_exists? && current_user
+  if session_exists? && current_user
     @user = current_user
     # displays posts that do not belong to the logged in user in homepage
     @posts = Post.where.not(user_id: @user.id)
@@ -66,21 +67,48 @@ post '/posts/new' do
     tag_in_db = Tag.find_by(content: tag)
     if tag_in_db.nil?
       new_tag = Tag.create(content: tag)
-      Tagging.create(post_id: post.id, tag_id: new_tag.id)
+      tag_id = new_tag.id
     else
-      Tagging.create(post_id: post.id, tag_id: tag_in_db.id)
+      tag_id = tag_in_db.id
     end
+    Tagging.create(post_id: post.id, tag_id: tag_id)
   end
   # TODO: should redirect to user's blog sorted by most recent post
-  redirect '/'
+  redirect '/users/#{@user.id}'
 end
+
+get '/users/:id' do
+  if params[:id].to_i <= User.count
+    blog_owner = User.find(params[:id])
+    # display posts that belong to blog owner
+    @posts = Post.where(user_id: blog_owner.id)
+    if session_exists? && blog_owner == current_user
+      puts "haha"
+    else
+      puts "fail"
+    end
+    if session_exists?
+      # define @user instance variable for user layout
+      @user = current_user
+      erb :'users/index', :layout => :'users/layout'
+    else
+      erb :'users/index'
+    end
+  else
+    # if user doesn't exist
+    erb :'users/none'
+  end
+end
+
+
+
 
 
 
 private
 
-# true if user exists
-def user_exists?
+# returns true if session exists; false if user has logged out
+def session_exists?
   session[:id] != nil
 end
 
