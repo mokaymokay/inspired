@@ -2,9 +2,19 @@
   <% @posts.each do |post| %>
     <div class="card my-4">
       <div class="card-body">
+        <small class="float-right"><%= post.updated_at.strftime('%b %d, %Y') %></small>
+        <div class="mb-3"><small><a href="/users/<%= post.user.id %>"><%= post.user.username %></a></small></div>
+        <blockquote class="blockquote mb-0">
+          <p><%= post.quote %></p>
+          <footer class="blockquote-footer"><%= post.author %></footer>
+        </blockquote>
+        <br>
+        <% post.tags.each do |tag| %>
+          <small>#<%= tag.content %></small>
+        <% end %>
         <!-- display edit/delete buttons only if user is on own blog -->
         <% if @user == @blog_owner %>
-          <div class="dropdown float-right">
+          <div class="float-right dropdown">
             <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="postEditDelete" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             </button>
             <div id="post-edit-delete" class="dropdown-menu dropdown-menu-right" aria-labelledby="postEditDelete">
@@ -15,15 +25,6 @@
               </form>
             </div>
           </div>
-        <% end %>
-        <div class="mb-3"><small><a href="/users/<%= post.user.id %>"><%= post.user.username %></a></small></div>
-        <blockquote class="blockquote mb-0">
-          <p><%= post.quote %></p>
-          <footer class="blockquote-footer"><%= post.author %></footer>
-        </blockquote>
-        <br>
-        <% post.tags.each do |tag| %>
-          <small>#<%= tag.content %></small>
         <% end %>
       </div>
     </div>
