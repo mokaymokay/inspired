@@ -138,6 +138,11 @@ delete '/posts/:id' do
   redirect "/users/#{@user.id}"
 end
 
+get '/profile/' do
+  @user = current_user
+  erb :'users/profile', :layout => :'users/layout'
+end
+
 
 
 private

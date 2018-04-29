@@ -1,0 +1,8 @@
+<h4>@<%= @user.username %></h4>
+<br>
+
+<h6><dt>first name:</dt> <%= @user.first_name %></h6>
+<h6><dt>last name:</dt> <%= @user.last_name %></h6>
+<h6><dt>email:</dt> <%= @user.email %></h6>
+<h6><dt>birthday:</dt> <%= @user.birthday %></h6>
+<h6><dt>user since:</dt> <%= @user.created_at.strftime('%b %d, %Y') %></h6>
