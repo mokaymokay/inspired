@@ -132,6 +132,12 @@ put '/posts/:id' do
   redirect "/users/#{@user.id}"
 end
 
+delete '/posts/:id' do
+  @user = current_user
+  Post.destroy(params[:id])
+  redirect "/users/#{@user.id}"
+end
+
 
 
 private
