@@ -143,6 +143,14 @@ get '/profile/' do
   erb :'users/profile', :layout => :'users/layout'
 end
 
+delete '/users/:id' do
+  session.clear
+  User.destroy(params[:id])
+  redirect "/"
+end
+
+
+
 
 
 private
