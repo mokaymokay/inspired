@@ -14,6 +14,7 @@
       </div>
     </div>
   <% end %>
+  <%= will_paginate @posts %>
 <% else %>
   <% if @user == @blog_owner %>
     <p>you haven't published anything yet.</p>

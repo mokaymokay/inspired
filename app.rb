@@ -1,6 +1,9 @@
 require 'sinatra'
 require 'sinatra/activerecord'
 require 'pry'
+require 'will_paginate'
+require 'will_paginate/active_record'
+
 require_relative './models/user'
 require_relative './models/post'
 require_relative './models/tag'
@@ -17,7 +20,7 @@ get '/' do
   if session_exists? && current_user
     @user = current_user
     # displays posts that do not belong to the logged in user in homepage
-    @posts = Post.where.not(user_id: @user.id)
+    @posts = Post.where.not(user_id: @user.id).paginate(:page => params[:page], :per_page => 20)
     erb :'users/index', :layout => :'users/layout'
   else
     erb :index
@@ -81,7 +84,7 @@ get '/users/:id' do
   if User.exists?(params[:id])
     @blog_owner = User.find(params[:id])
     # display posts that belong to blog owner
-    @posts = Post.where(user_id: @blog_owner.id)
+    @posts = Post.where(user_id: @blog_owner.id).paginate(:page => params[:page], :per_page => 20)
     # if user is logged in, display user layout
     if session_exists? && current_user
       # need @user instance variable for user layout
