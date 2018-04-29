@@ -99,6 +99,15 @@ get '/users/:id' do
   end
 end
 
+get '/posts/:id/edit' do
+  @post = Post.find(params[:id])
+  @user = current_user
+  @blog_owner = User.find(@post.user_id)
+  if @user == @blog_owner
+    erb :'posts/edit'
+  end
+end
+
 
 
 
