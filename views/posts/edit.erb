@@ -1,10 +1,10 @@
-<form action="/posts/<%= @post.id %>" method="put">
+<form action="/posts/<%= @post.id %>" method="post">
   <div class="card my-5">
     <div class="card-body">
       <input type="hidden" name="_method" value="put">
       <blockquote class="blockquote mb-0">
         <div class="form-group">
-          <textarea name="quote" class="form-control" rows="3" id="postId"><%= @post.quote %></textarea>
+          <textarea name="quote" class="form-control" rows="3" id="postId" value="<%= @post.quote %>"><%= @post.quote %></textarea>
         </div>
         <div class="form-group">
           <div class="input-group mb-3">
@@ -20,8 +20,7 @@
           <div class="input-group-prepend">
             <span class="input-group-text">#</span>
           </div>
-          <input name="tags" class="form-control form-control-sm" type="text"
-          value="<%= @post.tags.map { |tag| tag.content }.join(" ") %>" id="postTags">
+          <input name="tags" class="form-control form-control-sm" type="text" value="<%= @post.tags.map { |tag| tag.content }.join(" ") %>" id="postTags">
         </div>
       </div>
       <button type="submit" class="btn btn-outline-success float-right">save</button>

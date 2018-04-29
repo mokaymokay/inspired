@@ -108,8 +108,29 @@ get '/posts/:id/edit' do
   end
 end
 
-
-
+put '/posts/:id' do
+  @user = current_user
+  @post = Post.find(params[:id])
+  @post.update(quote: params[:quote], author: params[:author])
+  # TODO: fix ability to update tags
+  # tags = params[:tags]
+  # tags.split(' ').each do |tag|
+  #   # determine if tag already exists
+  #   tag_in_db = Tag.find_by(content: tag)
+  #   if Tagging.find_by(post_id: @post.id, tag_id: tag_in_db.id)
+  #     Tagging.update(content: tag)
+  #   else
+  #     if tag_in_db.nil?
+  #       new_tag = Tag.create(content: tag)
+  #       tag_id = new_tag.id
+  #     else
+  #       tag_id = tag_in_db.id
+  #     end
+  #     Tagging.create(post_id: @post.id, tag_id: tag_id)
+  #   end
+  # end
+  redirect "/users/#{@user.id}"
+end
 
 
 
