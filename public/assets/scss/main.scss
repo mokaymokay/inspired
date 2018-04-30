@@ -40,7 +40,7 @@ form label, h3, h5 {
 }
 
 #main-cta h1 {
-  color: $dark
+  color: white;
 }
 
 #signup-button {
@@ -105,4 +105,8 @@ small.float-right {
 
 .user-profile h6 > dt {
   color: $gray;
+}
+
+.blog-username {
+  color: $light;
 }
