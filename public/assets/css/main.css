@@ -26,12 +26,25 @@ nav a:hover, a:active {
   color: #A2C2EF;
 }
 
+.dropdown-menu a:active {
+  background: #A2C2EF;
+}
+
 form label, h3, h5 {
   color: #A2C2EF;
 }
 
-#main-cta h1 {
+#main-cta * {
   color: white;
+}
+
+#main-cta button:hover {
+  color: #A2C2EF;
+}
+
+#main-cta button:active {
+  color: #A2C2EF;
+  background-color: #07172D;
 }
 
 #signup-button {

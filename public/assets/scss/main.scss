@@ -35,19 +35,32 @@ nav a:hover, a:active {
   color: $light;
 }
 
+.dropdown-menu a:active {
+  background: $light;
+}
+
 form label, h3, h5 {
   color: $light;
 }
 
-#main-cta h1 {
+#main-cta * {
   color: white;
+}
+
+#main-cta button:hover {
+  color: $light;
+}
+
+#main-cta button:active {
+  color: $light;
+  background-color: $dark;
 }
 
 #signup-button {
   padding: .75rem 1.25rem;
   font-weight: 700;
   background-color: $balance;
-  vertical-align: middle
+  vertical-align: middle;
 }
 
 small a {
