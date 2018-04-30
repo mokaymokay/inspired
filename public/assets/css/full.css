@@ -6,3 +6,12 @@ body {
   background-size: cover;
   overflow: hidden;
 }
+
+a, a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+a:active, a:hover {
+  color: #A2C2EF;
+}

@@ -6,16 +6,27 @@ html, body {
   height: 100%;
 }
 
+body {
+  background-color: #2B5692;
+}
+
 #post-edit-delete {
   min-width: 90px;
 }
 
-a, a:active, a:hover, a:visited {
-  color: white;
+a, a:hover {
   text-decoration: none;
 }
 
-a:active, a:hover {
+nav a {
+  color: white;
+}
+
+nav a:hover, a:active {
+  color: #A2C2EF;
+}
+
+form label, h3, h5 {
   color: #A2C2EF;
 }
 

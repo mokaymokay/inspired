@@ -1,12 +1,15 @@
 <div class="container text-center">
   <form class="form-signin" method="post" action="/login">
     <img class="mb-4" src="http://via.placeholder.com/150x150" alt="Inspired Logo">
-    <h1 class="h3 mb-3 font-weight-normal">please sign in</h1>
+    <h3 class="mb-3 font-weight-normal">please log in</h3>
     <label for="inputEmail" class="sr-only">email address</label>
-    <input name="email" type="email" id="inputEmail" class="form-control" placeholder="email address" required autofocus>
+    <input name="email" type="email" id="inputEmail" class="form-control col-md-6 offset-md-3 mb-4" placeholder="email address" required autofocus>
     <label for="inputPassword" class="sr-only">password</label>
-    <input name="password" type="password" id="inputPassword" class="form-control" placeholder="password" required>
-    <button class="btn btn-lg btn-primary btn-block" type="submit">sign in</button>
-    <p class="mt-5 mb-3 text-muted">&copy; 2018 inspire(d)</p>
+    <input name="password" type="password" id="inputPassword" class="form-control col-md-6 offset-md-3 mb-4" placeholder="password" required>
+    <button class="btn btn-md btn-light mb-5" type="submit">log in</button>
+    <h5 class="mb-3 font-weight-normal">don't have an account?</h5>
   </form>
+  <a href="/signup"><button class="btn btn-md btn-light mb-5">sign up</button></a>
+  <a href="/users/1"><button class="btn btn-md btn-light mb-5">demo</button></a>
+  <p class="mt-5 mb-3">&copy; 2018 inspire(d)</p>
 </div>
