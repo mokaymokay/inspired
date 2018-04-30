@@ -23,7 +23,7 @@ get '/' do
     @posts = Post.where.not(user_id: @user.id).paginate(:page => params[:page], :per_page => 20)
     erb :'users/index', :layout => :'users/layout'
   else
-    erb :index
+    erb :index, :layout => :'cover'
   end
 end
 

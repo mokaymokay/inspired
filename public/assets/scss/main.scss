@@ -1,0 +1,44 @@
+$a-tags: 'a, a:active, a:hover, a:visited';
+$a-tags-hover: 'a:active, a:hover';
+$light: #A2C2EF;
+$highlight: #257CF5;
+$main: #2B5692;
+$balance: #153158;
+$dark: #07172D;
+
+* {
+  text-transform: lowercase;
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+// edit/delete post buttons
+#post-edit-delete {
+  min-width: 90px;
+}
+
+#{$a-tags} {
+  color: $light;
+  text-decoration: none;
+}
+#{$a-tags-hover} {
+  color: white;
+}
+
+#full-bg {
+  background: url('../inspired-bg.png') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#signup-button {
+  padding: .75rem 1.25rem;
+  font-weight: 700;
+  background-color: $highlight;
+  vertical-align: middle
+}
