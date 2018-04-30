@@ -1,0 +1,18 @@
+# inspire(d)
+## Blogging app for sharing inspirational quotes
+
+## Built with:
+* Ruby
+* Sinatra
+* PostgreSQL
+* Bootstrap
+
+## Features:
+* Users can browse posts without logging in
+* Users can sign up for an account
+* Users can add, read, edit, or delete their personal posts (CRUD) on their blog
+* Users can search posts by tag
+* Posts are displayed in chronological order (most recent posts are shown first)
+
+## Acknowledgements
+* Inspiration: [Tumblr](https://www.tumblr.com)
