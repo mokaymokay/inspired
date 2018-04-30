@@ -104,7 +104,7 @@ get '/posts/:id/edit' do
   @user = current_user
   @blog_owner = User.find(@post.user_id)
   if @user == @blog_owner
-    erb :'posts/edit'
+    erb :'posts/edit', :layout => :'users/layout'
   end
 end
 
