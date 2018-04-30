@@ -149,7 +149,18 @@ delete '/users/:id' do
   redirect "/"
 end
 
-
+get '/tagged/:tag' do
+  tag = Tag.find_by(content: params[:tag])
+  @posts = Post.joins(:taggings).where(taggings: {tag_id: tag.id}).paginate(:page => params[:page], :per_page => 20)
+  # if user is logged in, display user layout
+  if session_exists? && current_user
+    # need @user instance variable for user layout
+    @user = current_user
+    erb :'users/index', :layout => :'users/layout'
+  else
+    erb :'users/index'
+  end
+end
 
 
 
