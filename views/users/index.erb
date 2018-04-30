@@ -17,7 +17,7 @@
             <small><a href="/tagged/<%= tag.content %>">#<%= tag.content %></a></small>
           <% end %>
           <!-- display edit/delete buttons only if user is on own blog -->
-          <% if @user == @blog_owner %>
+          <% if @user && @user == @blog_owner %>
             <div class="float-right dropdown">
               <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="postEditDelete" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               </button>

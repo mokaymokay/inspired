@@ -9,7 +9,8 @@ require_relative './models/post'
 require_relative './models/tag'
 require_relative './models/tagging'
 
-set :database, {adapter: 'postgresql', database: 'rumblr'}
+# comment out for heroku deployment
+# set :database, {adapter: 'postgresql', database: 'rumblr'}
 
 configure do
   enable :sessions unless test?
