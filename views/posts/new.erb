@@ -1,28 +1,30 @@
-<form action="/posts/new" method="post">
-  <div class="card my-5">
-    <div class="card-body">
-      <blockquote class="blockquote mb-0">
-        <div class="form-group">
-          <textarea name="quote" class="form-control" rows="3" placeholder="quote" id="postId"></textarea>
-        </div>
+<div class="container">
+  <form action="/posts/new" method="post">
+    <div class="card my-5 col-lg-8 offset-lg-2">
+      <div class="card-body">
+        <blockquote class="blockquote mb-0">
+          <div class="form-group">
+            <textarea name="quote" class="form-control" rows="3" placeholder="quote" id="postId"></textarea>
+          </div>
+          <div class="form-group">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">—</span>
+              </div>
+              <input name="author" class="form-control form-control-sm" type="text" placeholder="source" id="postSource">
+            </div>
+          </div>
+        </blockquote>
         <div class="form-group">
           <div class="input-group mb-3">
             <div class="input-group-prepend">
-              <span class="input-group-text">—</span>
+              <span class="input-group-text">#</span>
             </div>
-            <input name="author" class="form-control form-control-sm" type="text" placeholder="source" id="postSource">
+            <input name="tags" class="form-control form-control-sm" type="text" placeholder="tag tag tag" id="postTags">
           </div>
         </div>
-      </blockquote>
-      <div class="form-group">
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text">#</span>
-          </div>
-          <input name="tags" class="form-control form-control-sm" type="text" placeholder="tag tag tag" id="postTags">
-        </div>
+        <button type="submit" class="btn btn-outline-success float-right">post</button>
       </div>
-      <button type="submit" class="btn btn-outline-success float-right">post</button>
     </div>
-  </div>
-</form>
+  </form>
+</div>

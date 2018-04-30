@@ -1,15 +1,18 @@
-<h4><a href="/users/<%= @user.id %>">@<%= @user.username %></a></h4>
-<br>
+<div class="container user-profile">
+  <h4><a href="/users/<%= @user.id %>">@<%= @user.username %></a></h4>
+  <br>
 
-<h6><dt>first name:</dt> <%= @user.first_name %></h6>
-<h6><dt>last name:</dt> <%= @user.last_name %></h6>
-<h6><dt>email:</dt> <%= @user.email %></h6>
-<h6><dt>birthday:</dt> <%= @user.birthday %></h6>
-<h6><dt>user since:</dt> <%= @user.created_at.strftime('%b %d, %Y') %></h6>
-<h6><dt>posts made:</dt> <%= @user.posts.count %></h6>
+  <h6><dt>first name:</dt> <%= @user.first_name %></h6>
+  <h6><dt>last name:</dt> <%= @user.last_name %></h6>
+  <h6><dt>email:</dt> <%= @user.email %></h6>
+  <h6><dt>birthday:</dt> <%= @user.birthday %></h6>
+  <h6><dt>user since:</dt> <%= @user.created_at.strftime('%b %d, %Y') %></h6>
+  <h6><dt>posts made:</dt> <%= @user.posts.count %></h6>
 
-<br>
-<form action="/users/<%= @user.id %>" method="post" onsubmit="return confirm('Are you sure you want to delete your account? ALL of your information will be GONE FOREVER.')">
-  <input type="hidden" name="_method" value="delete">
-  <button type="submit" class="btn btn-outline-danger">delete</button>
-</form>
+  <br>
+  <form action="/users/<%= @user.id %>" method="post" onsubmit="return confirm('Are you sure you want to delete your account? ALL of your information will be GONE FOREVER.')">
+    <input type="hidden" name="_method" value="delete">
+    <button type="submit" class="btn btn-danger">delete</button>
+  </form>
+
+</div>

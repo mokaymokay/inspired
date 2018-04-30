@@ -4,7 +4,7 @@ $main: #2B5692;
 $balance: #153158;
 $dark: #07172D;
 $darkgray: #555;
-$gray: #888;
+$gray: #999;
 
 * {
   text-transform: lowercase;
@@ -93,4 +93,16 @@ small.float-right {
 
 .pagination em, span {
   color: $light;
+}
+
+.user-profile a, h6 {
+  color: white;
+}
+
+.user-profile a:hover, a:active {
+  color: $balance;
+}
+
+.user-profile h6 > dt {
+  color: $gray;
 }

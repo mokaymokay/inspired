@@ -1,7 +1,7 @@
 <% if !@posts.empty? %>
   <div class="container">
     <% @posts.each do |post| %>
-      <div class="card my-4 col-lg-8 offset-lg-2 blog-post">
+      <div class="card my-4 col-lg-8 offset-lg-2">
         <div class="card-body">
           <small class="float-right"><%= post.updated_at.strftime('%b %d, %Y') %></small>
           <div class="mb-3"><small><a href="/users/<%= post.user.id %>"><%= post.user.username %></a></small></div>

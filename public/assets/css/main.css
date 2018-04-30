@@ -50,7 +50,7 @@ small a:hover, a:active {
 }
 
 small.float-right {
-  color: #888;
+  color: #999;
 }
 
 .card {
@@ -84,4 +84,16 @@ small.float-right {
 
 .pagination em, span {
   color: #A2C2EF;
+}
+
+.user-profile a, h6 {
+  color: white;
+}
+
+.user-profile a:hover, a:active {
+  color: #153158;
+}
+
+.user-profile h6 > dt {
+  color: #999;
 }
