@@ -1,0 +1,8 @@
+body {
+  background: url('../inspired-bg.png') no-repeat bottom center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  overflow: hidden;
+}

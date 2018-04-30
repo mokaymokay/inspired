@@ -2,9 +2,8 @@
   text-transform: lowercase;
 }
 
-body, html {
+html, body {
   height: 100%;
-  margin: 0;
 }
 
 #post-edit-delete {
@@ -12,25 +11,21 @@ body, html {
 }
 
 a, a:active, a:hover, a:visited {
-  color: #A2C2EF;
+  color: white;
   text-decoration: none;
 }
 
 a:active, a:hover {
-  color: white;
+  color: #A2C2EF;
 }
 
-#full-bg {
-  background: url("../inspired-bg.png") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+#main-cta h1 {
+  color: #07172D;
 }
 
 #signup-button {
   padding: .75rem 1.25rem;
   font-weight: 700;
-  background-color: #257CF5;
+  background-color: #153158;
   vertical-align: middle;
 }

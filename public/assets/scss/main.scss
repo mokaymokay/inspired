@@ -1,7 +1,7 @@
 $a-tags: 'a, a:active, a:hover, a:visited';
 $a-tags-hover: 'a:active, a:hover';
 $light: #A2C2EF;
-$highlight: #257CF5;
+$highlight: #4073B8;
 $main: #2B5692;
 $balance: #153158;
 $dark: #07172D;
@@ -10,9 +10,8 @@ $dark: #07172D;
   text-transform: lowercase;
 }
 
-body, html {
+html, body {
   height: 100%;
-  margin: 0;
 }
 
 // edit/delete post buttons
@@ -21,24 +20,20 @@ body, html {
 }
 
 #{$a-tags} {
-  color: $light;
+  color: white;
   text-decoration: none;
 }
 #{$a-tags-hover} {
-  color: white;
+  color: $light;
 }
 
-#full-bg {
-  background: url('../inspired-bg.png') no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+#main-cta h1 {
+  color: $dark
 }
 
 #signup-button {
   padding: .75rem 1.25rem;
   font-weight: 700;
-  background-color: $highlight;
+  background-color: $balance;
   vertical-align: middle
 }

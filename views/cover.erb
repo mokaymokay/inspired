@@ -4,26 +4,30 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <link rel="stylesheet" href="<%= url('/assets/css/main.css') %>">
+    <!-- full background -->
+    <link rel="stylesheet" href="<%= url('/assets/css/full.css') %>">
+
     <title>inspire(d)</title>
   </head>
   <body>
-    <div class="container">
-      <header class="mb-5">
-        <nav class="navbar navbar-light bg-light fixed-top">
-        <a class="navbar-brand" href="/">
-          <img src="http://via.placeholder.com/30x30" width="30" height="30" class="d-inline-block align-top" alt="Logo">
-          inspire(d)
-        </a>
-        <a class="float-right" href="/login">log in</a>
+    <header class="mb-5">
+      <nav class="navbar fixed-top">
+      <a class="navbar-brand" href="/">
+        <img src="http://via.placeholder.com/30x30" width="30" height="30" class="d-inline-block align-top" alt="Logo">
+        inspire(d)
+      </a>
+      <a class="float-right" href="/login">log in</a>
       </nav>
     </header>
-    <%= yield %>
+    <div class="h-100 row align-items-center">
+      <div id="main-cta" class="col text-center">
+        <h1>inspire, and be inspired.</h1>
+        <button class="btn mt-5" id="signup-button"><a href="/signup">Get Started</a></button>
+      </div>
     </div>
-
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
