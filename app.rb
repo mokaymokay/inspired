@@ -150,7 +150,8 @@ delete '/users/:id' do
 end
 
 get '/tagged/:tag' do
-  tag = Tag.find_by(content: params[:tag])
+  search_tag = params[:tag]
+  tag = Tag.find_by(content: search_tag)
   @posts = Post.joins(:taggings).where(taggings: {tag_id: tag.id}).paginate(:page => params[:page], :per_page => 20)
   # if user is logged in, display user layout
   if session_exists? && current_user
@@ -162,6 +163,9 @@ get '/tagged/:tag' do
   end
 end
 
+post '/search' do
+  redirect "/tagged/#{params[:query]}"
+end
 
 
 private
