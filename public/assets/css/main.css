@@ -63,7 +63,7 @@ small.float-right {
 
 .pagination a {
   color: white;
-  padding: 4px 8px;
+  padding: 8px 16px;
   text-decoration: none;
 }
 
@@ -100,4 +100,8 @@ small.float-right {
 
 .blog-username {
   color: #A2C2EF;
+}
+
+header {
+  margin-bottom: 100px;
 }

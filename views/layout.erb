@@ -12,12 +12,16 @@
   </head>
   <body>
     <div class="container">
-      <header class="mb-5">
+      <header>
         <nav class="navbar fixed-top">
         <a class="navbar-brand" href="/">
           <img src="http://via.placeholder.com/30x30" width="30" height="30" class="d-inline-block align-top" alt="Logo">
           inspire(d)
         </a>
+        <form class="mr-auto form-inline my-2 my-lg-0" action="/search" method="post">
+          <input class="form-control mr-sm-2" name="query" type="search" placeholder="tag" aria-label="Search">
+          <button class="btn btn-light my-2 my-sm-0" type="submit">search</button>
+        </form>
         <a class="float-right" href="/login">log in</a>
       </nav>
     </header>
