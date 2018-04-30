@@ -40,3 +40,48 @@ form label, h3, h5 {
   background-color: #153158;
   vertical-align: middle;
 }
+
+small a {
+  color: #555;
+}
+
+small a:hover, a:active {
+  color: #4073B8;
+}
+
+small.float-right {
+  color: #888;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.pagination {
+  display: block;
+}
+
+.pagination a {
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.pagination a.active {
+  background-color: #07172D;
+  color: white;
+  border-radius: 5px;
+}
+
+.pagination a:hover:not(.active) {
+  background-color: #153158;
+  border-radius: 5px;
+}
+
+#pagination-section {
+  text-align: center;
+}
+
+.pagination em, span {
+  color: #A2C2EF;
+}

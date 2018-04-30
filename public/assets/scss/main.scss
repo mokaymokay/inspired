@@ -3,6 +3,8 @@ $highlight: #4073B8;
 $main: #2B5692;
 $balance: #153158;
 $dark: #07172D;
+$darkgray: #555;
+$gray: #888;
 
 * {
   text-transform: lowercase;
@@ -46,4 +48,49 @@ form label, h3, h5 {
   font-weight: 700;
   background-color: $balance;
   vertical-align: middle
+}
+
+small a {
+  color: $darkgray;
+}
+
+small a:hover, a:active {
+  color: $highlight;
+}
+
+small.float-right {
+  color: $gray;
+}
+
+.card {
+  background-color: rgba( white, .9 );
+}
+
+.pagination {
+  display: block;
+}
+
+.pagination a {
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.pagination a.active {
+  background-color: $dark;
+  color: white;
+  border-radius: 5px;
+}
+
+.pagination a:hover:not(.active) {
+  background-color: $balance;
+  border-radius: 5px;
+}
+
+#pagination-section {
+  text-align: center;
+}
+
+.pagination em, span {
+  color: $light;
 }
