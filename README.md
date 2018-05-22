@@ -7,6 +7,19 @@
 * PostgreSQL
 * Bootstrap
 
+## Demo Login:
+* Username: kay@example.com
+* Password: password
+
+Landing page:
+![landing page](github/landing-page.png)
+
+Search by tag:
+![search by tag](github/tagged.png)
+
+Sample blog:
+![sample blog](github/user-blog.png)
+
 ## Features:
 * Users can browse posts without logging in
 * Users can sign up for an account
